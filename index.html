@@ -41,6 +41,9 @@
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
+            display: block;
+            overflow-x: auto;
+            white-space: nowrap; /* Cho phép cuộn ngang */
         }
 
         th, td {
@@ -95,24 +98,26 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
 
-        /* Responsive Design */
+        /* Responsive Design for mobile */
         @media (max-width: 768px) {
-            /* For mobile, display as block */
-            table, th, td {
-                display: block;
-                width: 100%;
+            /* Mobile version: reduce font size and enable scrolling */
+            th, td {
+                padding: 10px;
+                font-size: 14px;
             }
 
-            th {
-                background-color: #3498db;
-                color: white;
+            .title {
+                font-size: 2rem;
+            }
+
+            table {
+                -webkit-overflow-scrolling: touch;
             }
 
             td {
-                text-align: right;
-                padding-left: 50%;
+                text-align: left;
+                padding-left: 20px;
                 border: none;
-                position: relative;
             }
 
             td:before {
@@ -122,20 +127,6 @@
                 text-align: left;
                 display: block;
                 margin-bottom: 5px;
-            }
-
-            /* Adjust title size on mobile */
-            .title {
-                font-size: 2rem;
-            }
-        }
-
-        /* Tablet and larger screens */
-        @media (min-width: 768px) {
-            /* For screens larger than 768px, table layout remains unchanged */
-            table {
-                width: 100%;
-                table-layout: auto;
             }
         }
     </style>
