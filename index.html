@@ -36,6 +36,7 @@
             margin-bottom: 30px;
         }
 
+        /* Table styles */
         table {
             width: 100%;
             border-collapse: collapse;
@@ -96,6 +97,7 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
+            /* For mobile, display as block */
             table, th, td {
                 display: block;
                 width: 100%;
@@ -108,16 +110,32 @@
 
             td {
                 text-align: right;
-                border: none;
                 padding-left: 50%;
+                border: none;
+                position: relative;
             }
 
             td:before {
+                /* Add labels for each cell in mobile view */
                 content: attr(data-label);
                 font-weight: bold;
                 text-align: left;
                 display: block;
                 margin-bottom: 5px;
+            }
+
+            /* Adjust title size on mobile */
+            .title {
+                font-size: 2rem;
+            }
+        }
+
+        /* Tablet and larger screens */
+        @media (min-width: 768px) {
+            /* For screens larger than 768px, table layout remains unchanged */
+            table {
+                width: 100%;
+                table-layout: auto;
             }
         }
     </style>
@@ -141,58 +159,58 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>BS0.003.2</td>
-                    <td>Giải tích-1-25-CQ.66.KTTH</td>
-                    <td>P2E6</td>
-                    <td class="capacity">70</td>
-                    <td class="instructor">Võ Thị Bích Trâm</td>
-                    <td class="start-date">9/15/2025</td>
-                    <td class="end-date">12/6/2025</td>
+                    <td data-label="Code">BS0.003.2</td>
+                    <td data-label="Subject">Giải tích-1-25-CQ.66.KTTH</td>
+                    <td data-label="Room">P2E6</td>
+                    <td class="capacity" data-label="Capacity">70</td>
+                    <td class="instructor" data-label="Instructor">Võ Thị Bích Trâm</td>
+                    <td class="start-date" data-label="Start Date">9/15/2025</td>
+                    <td class="end-date" data-label="End Date">12/6/2025</td>
                 </tr>
                 <tr>
-                    <td>ITO.002.2</td>
-                    <td>Tin học đại cương-1-25-CQ.66.KTTH_N_1</td>
-                    <td>Cập nhật sau</td>
-                    <td class="capacity">35</td>
-                    <td class="instructor">Trần Thị Minh Ánh</td>
-                    <td class="start-date">10/6/2025</td>
-                    <td class="end-date">11/15/2025</td>
+                    <td data-label="Code">ITO.002.2</td>
+                    <td data-label="Subject">Tin học đại cương-1-25-CQ.66.KTTH_N_1</td>
+                    <td data-label="Room">Cập nhật sau</td>
+                    <td class="capacity" data-label="Capacity">35</td>
+                    <td class="instructor" data-label="Instructor">Trần Thị Minh Ánh</td>
+                    <td class="start-date" data-label="Start Date">10/6/2025</td>
+                    <td class="end-date" data-label="End Date">11/15/2025</td>
                 </tr>
                 <tr>
-                    <td>ITO.002.2</td>
-                    <td>Tin học đại cương-1-25-CQ.66.KTTH</td>
-                    <td>P1E6</td>
-                    <td class="capacity">70</td>
-                    <td class="instructor">Nguyễn Thiện Dương</td>
-                    <td class="start-date">9/15/2025</td>
-                    <td class="end-date">10/4/2025</td>
+                    <td data-label="Code">ITO.002.2</td>
+                    <td data-label="Subject">Tin học đại cương-1-25-CQ.66.KTTH</td>
+                    <td data-label="Room">P1E6</td>
+                    <td class="capacity" data-label="Capacity">70</td>
+                    <td class="instructor" data-label="Instructor">Nguyễn Thiện Dương</td>
+                    <td class="start-date" data-label="Start Date">9/15/2025</td>
+                    <td class="end-date" data-label="End Date">10/4/2025</td>
                 </tr>
                 <tr>
-                    <td>PE0.001.1</td>
-                    <td>Giáo dục thể chất F1-1-25-CQ.66.KTTH</td>
-                    <td>Cập nhật sau</td>
-                    <td class="capacity">70</td>
-                    <td class="instructor">Nguyễn Phi Yến</td>
-                    <td class="start-date">9/15/2025</td>
-                    <td class="end-date">11/8/2025</td>
+                    <td data-label="Code">PE0.001.1</td>
+                    <td data-label="Subject">Giáo dục thể chất F1-1-25-CQ.66.KTTH</td>
+                    <td data-label="Room">Cập nhật sau</td>
+                    <td class="capacity" data-label="Capacity">70</td>
+                    <td class="instructor" data-label="Instructor">Nguyễn Phi Yến</td>
+                    <td class="start-date" data-label="Start Date">9/15/2025</td>
+                    <td class="end-date" data-label="End Date">11/8/2025</td>
                 </tr>
                 <tr>
-                    <td>BSO.102.2</td>
-                    <td>Đại số tuyến tính-1-25-CQ.66.KTTH+QLDA</td>
-                    <td>P101C2</td>
-                    <td class="capacity">120</td>
-                    <td class="instructor">Phan Hoàng Nam</td>
-                    <td class="start-date">9/15/2025</td>
-                    <td class="end-date">12/6/2025</td>
+                    <td data-label="Code">BSO.102.2</td>
+                    <td data-label="Subject">Đại số tuyến tính-1-25-CQ.66.KTTH+QLDA</td>
+                    <td data-label="Room">P101C2</td>
+                    <td class="capacity" data-label="Capacity">120</td>
+                    <td class="instructor" data-label="Instructor">Phan Hoàng Nam</td>
+                    <td class="start-date" data-label="Start Date">9/15/2025</td>
+                    <td class="end-date" data-label="End Date">12/6/2025</td>
                 </tr>
                 <tr>
-                    <td>PS0.001.3</td>
-                    <td>Triết học Mác-Lê nin-1-25-CQ.66.KTTH+TC-NH</td>
-                    <td>P101C2</td>
-                    <td class="capacity">120</td>
-                    <td class="instructor">Vũ Thị Hiền</td>
-                    <td class="start-date">9/15/2025</td>
-                    <td class="end-date">12/6/2025</td>
+                    <td data-label="Code">PS0.001.3</td>
+                    <td data-label="Subject">Triết học Mác-Lê nin-1-25-CQ.66.KTTH+TC-NH</td>
+                    <td data-label="Room">P101C2</td>
+                    <td class="capacity" data-label="Capacity">120</td>
+                    <td class="instructor" data-label="Instructor">Vũ Thị Hiền</td>
+                    <td class="start-date" data-label="Start Date">9/15/2025</td>
+                    <td class="end-date" data-label="End Date">12/6/2025</td>
                 </tr>
             </tbody>
         </table>
